@@ -14,17 +14,17 @@ variables:
   autoVersion: ''
 
 steps:
-- task: UseDotNet@1
+- task: UseDotNet@0
   inputs:
     packageType: 'sdk'
     version: '3.0.100-preview6-012264'
     includePreviewVersions: true
-- task: AutoAppVersion@2
+- task: AutoAppVersion@1
   inputs:
     ProjectFile: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
     VersionVariable: 'AutoVersion'
     DevOpsPAT: '$(AzurePAT)'
-- task: DotNetCoreCLI@3
+- task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
