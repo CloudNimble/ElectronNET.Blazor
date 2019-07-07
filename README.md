@@ -1,6 +1,9 @@
 # ElectronNET.Blazor
 A library to help Blazor and Electron.NET work better together.
 
+## How to Use
+Electron.NET can be applied to any Blazor app that uses the "Blazor (ASP.NET Core Hosted)" template. This is because there has to be something that serves up the web page to the Chrome instance, and .NET Core MVC apps are just compiled EXEs anyway. Standalone apps won't work because there won't be any built-in way to serve up the resources. 
+
 ## Installation Instructions:
 
 1) Add the [https://www.nuget.org/packages/ElectronNET.Blazor](https://www.nuget.org/packages/ElectronNET.Blazor) NuGet package to your project.
