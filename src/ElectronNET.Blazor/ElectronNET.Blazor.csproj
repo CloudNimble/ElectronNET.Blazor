@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>..\packages</PackageOutputPath>
+    <PackageId>ElectronNET.Blazor</PackageId>
+    <Authors>Robert McLaws</Authors>
+    <Company>CloudNimble, Inc.</Company>
+    <Product>Electron.NET</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/CloudNimble/ElectronNET.Blazor/</PackageProjectUrl>
+    <Description>Building cross platform Electron-based apps with ASP.NET Core 3.0 and Blazor. NOTE: Install this package in your **Server-side** project. Blazor + Electron requires the "Blazor (ASP.NET Core Hosted)" project type and will not run in "standalone" Blazor.</Description>
+    <RepositoryUrl>https://github.com/CloudNimble/ElectronNET.Blazor/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageTags>electron aspnetcore blazor</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageIconUrl>https://raw.githubusercontent.com/ElectronNET/Electron.NET/master/assets/images/electron.net-logo-square.png</PackageIconUrl>
+    <Version>1.0.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview6.19307.2" />
+    <PackageReference Include="ElectronNET.API" Version="5.22.13" />
+  </ItemGroup>
+
+</Project>
