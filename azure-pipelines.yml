@@ -11,7 +11,15 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  autoVersion: ''
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: AutoAppVersion@1
+  inputs:
+    ProjectFile: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
+    VersionVariable: 'AutoVersion'
+    DevOpsPAT: '$(AzurePAT)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
