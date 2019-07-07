@@ -23,9 +23,13 @@ steps:
     ProjectFile: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
     VersionVariable: 'AutoVersion'
     DevOpsPAT: '$(AzurePAT)'
-    SetAssemblyVersion: true
+    SetAssemblyVersion: false
     SetFileVersion: false
+    StopOnNoMask: false
+    StopOnDowngrade: false
+    StopOnInvalidEVarName: false
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
+
