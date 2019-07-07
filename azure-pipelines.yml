@@ -28,8 +28,8 @@ steps:
     StopOnNoMask: false
     StopOnDowngrade: false
     StopOnInvalidEVarName: false
+    VersionMaskOverride: '0.0.$'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
-
