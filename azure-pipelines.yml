@@ -13,7 +13,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: UseDotNet@0
+- task: UseDotNet@2
   inputs:
     packageType: 'sdk'
     version: '3.0.100-preview6-012264'
@@ -28,8 +28,19 @@ steps:
     StopOnNoMask: false
     StopOnDowngrade: false
     StopOnInvalidEVarName: false
-    VersionMaskOverride: '0.0.$'
+    VersionMaskOverride: '3.0.0-preview6-19307-0$'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)\src\packages\'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    CleanTargetFolder: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
