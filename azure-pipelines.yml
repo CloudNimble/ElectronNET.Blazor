@@ -7,19 +7,24 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-2019'
 
 variables:
   buildConfiguration: 'Release'
   autoVersion: ''
 
 steps:
-- task: AutoAppVersion@1
+- task: UseDotNet@1
+  inputs:
+    packageType: 'sdk'
+    version: '3.0.100-preview6-012264'
+    includePreviewVersions: true
+- task: AutoAppVersion@2
   inputs:
     ProjectFile: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
     VersionVariable: 'AutoVersion'
     DevOpsPAT: '$(AzurePAT)'
-- task: DotNetCoreCLI@2
+- task: DotNetCoreCLI@3
   inputs:
     command: 'build'
     projects: 'src\ElectronNET.Blazor\ElectronNET.Blazor.csproj'
