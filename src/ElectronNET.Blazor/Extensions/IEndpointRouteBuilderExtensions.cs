@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ElectronNET.API;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using System;
 
@@ -19,7 +20,7 @@ namespace Microsoft.Extensions.FileProviders
         /// <returns>The <see cref="IEndpointRouteBuilder"/> instance to continue fluent chaining.</returns>
         public static IEndpointRouteBuilder MapFallbackToClientSideElectronNET<TClientApp>(this IEndpointRouteBuilder builder, string path)
         {
-            if (Environment.GetEnvironmentVariable("IS_ELECTRON") == "true")
+            if (HybridSupport.IsElectronActive)
             {
                 var assemblyName = typeof(TClientApp).Assembly.GetName().Name.ToLower().Replace(".", "");
                 builder.MapFallbackToClientSideBlazor<TClientApp>($"_content/{assemblyName}/{path}");

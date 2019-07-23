@@ -69,10 +69,7 @@ dotnet tool install ElectronNET.CLI -g
 electronize init
 ```
 
-7) Open the Project Properties of your Server project, open the Debug tab, and under "Environment Variables",
-   add an "IS_ELECTRON" variable with the value of "true" (without the quotation marks).
-
-8) Next to the green arrow that starts debugging, make sure the "Electron.NET App" profile is selected, and 
+7) Next to the green arrow that starts debugging, make sure the "Electron.NET App" profile is selected, and 
    then hit the green button.
 
-9) PROFIT!!!
+8) PROFIT!!!

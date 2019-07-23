@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ElectronNET.API;
+using Microsoft.AspNetCore.Builder;
 using System;
 using System.IO;
 
@@ -19,7 +20,7 @@ namespace Microsoft.Extensions.FileProviders
         /// <returns>The <see cref="IApplicationBuilder"/> instance to continue fluent chaining.</returns>
         public static IApplicationBuilder UseElectronNETStaticFiles<TClientApp>(this IApplicationBuilder builder)
         {
-            if (Environment.GetEnvironmentVariable("IS_ELECTRON") == "true")
+            if (HybridSupport.IsElectronActive)
             {
                 var assemblyName = typeof(TClientApp).Assembly.GetName().Name.ToLower().Replace(".", "");
                 builder.UseStaticFiles(new StaticFileOptions
