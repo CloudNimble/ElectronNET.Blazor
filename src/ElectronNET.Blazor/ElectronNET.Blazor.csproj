@@ -19,11 +19,11 @@
     <PackageTags>electron aspnetcore blazor</PackageTags>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/ElectronNET/Electron.NET/master/assets/images/electron.net-logo-square.png</PackageIconUrl>
-    <Version>3.0.0-preview6-19307-02</Version>
+    <Version>3.0.0-preview7.19365.7</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview6.19307.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview7.19365.7" />
     <PackageReference Include="ElectronNET.API" Version="5.22.13" />
   </ItemGroup>
 

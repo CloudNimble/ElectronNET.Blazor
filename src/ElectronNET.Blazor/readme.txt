@@ -1,8 +1,8 @@
 ﻿===================================================
 ElectronNET.Blazor
 Written By:		Robert McLaws
-Version:		1.0.0
-Last Updated:	6 July 2019
+Version:		3.0.0-preview7.19365.7
+Last Updated:	27 July 2019
 ===================================================
 
 Installation Instructions:
