@@ -20,15 +20,15 @@ namespace Microsoft.Extensions.FileProviders
         /// <returns>The <see cref="IEndpointRouteBuilder"/> instance to continue fluent chaining.</returns>
         public static IEndpointRouteBuilder MapFallbackToClientSideElectronNET<TClientApp>(this IEndpointRouteBuilder builder, string path)
         {
-            if (HybridSupport.IsElectronActive)
-            {
-                var assemblyName = typeof(TClientApp).Assembly.GetName().Name.ToLower().Replace(".", "");
-                builder.MapFallbackToClientSideBlazor<TClientApp>($"_content/{assemblyName}/{path}");
-            }
-            else
-            {
+            //if (HybridSupport.IsElectronActive)
+            //{
+            //    var assemblyName = typeof(TClientApp).Assembly.GetName().Name.ToLower().Replace(".", "");
+            //    builder.MapFallbackToClientSideBlazor<TClientApp>($"_content/{assemblyName}/{path}");
+            //}
+            //else
+            //{
                 builder.MapFallbackToClientSideBlazor<TClientApp>("index.html");
-            }
+            //}
 
             return builder;
         }

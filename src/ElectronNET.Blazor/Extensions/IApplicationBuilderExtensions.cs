@@ -20,20 +20,21 @@ namespace Microsoft.Extensions.FileProviders
         /// <returns>The <see cref="IApplicationBuilder"/> instance to continue fluent chaining.</returns>
         public static IApplicationBuilder UseElectronNETStaticFiles<TClientApp>(this IApplicationBuilder builder)
         {
-            if (HybridSupport.IsElectronActive)
-            {
-                var assemblyName = typeof(TClientApp).Assembly.GetName().Name.ToLower().Replace(".", "");
-                builder.UseStaticFiles(new StaticFileOptions
-                {
-                    FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\_content\\{assemblyName}")),
-                    RequestPath = ""
-                });
-            }
-            else
-            {
+            //if (HybridSupport.IsElectronActive)
+            //{
+            //    var assemblyName = typeof(TClientApp).Assembly.GetName().Name;
+            //    builder.UseStaticFiles(new StaticFileOptions
+            //    {
+            //        FileProvider = new PhysicalFileProvider(
+            //        //Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\_content\\{assemblyName}")),
+            //        Path.Combine(Directory.GetCurrentDirectory(), assemblyName)),
+            //        RequestPath = ""
+            //    });
+            //}
+            //else
+            //{
                 builder.UseStaticFiles();
-            }
+            //}
 
             return builder;
         }
