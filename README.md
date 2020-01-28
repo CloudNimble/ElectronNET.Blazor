@@ -1,6 +1,8 @@
 # ElectronNET.Blazor
 A library to help Blazor and Electron.NET work better together.
 
+NOTE: THIS LIBRARY IS NO LONGER NECESSARY. Microsoft has fixed the underlying issues with Blazor, and everything works fine now. If you're using this library, you can uninstall it and just follow the BlazingPizza instructions. Thanks for your support!
+
 ## Acknowledgements
 Special thanks to the [Electron.NET team](https://github.com/ElectronNET/Electron.NET) for building an amazing resource, and to [Maher Jendoubi](https://maherjendoubi.io) for setting me down the path to making this work with his article on [adding Electron.NET to BlazingPizza](https://maherjendoubi.io/blazor-electron/).
 
